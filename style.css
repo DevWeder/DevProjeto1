@@ -66,7 +66,7 @@ body * {
 
   margin: 4px auto;
 }
-#swith button {
+#swith button{
   width: 32px;
   height: 32px;
   background: white var(--swith-bg-url) no-repeat center;
@@ -78,12 +78,18 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-10%);
+  animation: slide-back 0.2s;
+}
+#swith button:hover{
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #swith button {
-  left: initial;
-  right: 0;
+ animation: slide-in 0.4s forwards;
+ 
 }
+
+
 
 #swith span {
   display: block;
@@ -95,6 +101,8 @@ body * {
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
   border-radius: 9999px;
+
+  
 }
 
 /*liks*/
@@ -172,12 +180,34 @@ footer {
 @media (min-width: 700px){
 
 :root {
-  --bg-url: url(.assets/bg.jpg);
+  --bg-url:  url(./assets/bg-desktop.jpg);
+  
 }
 
 .light {
 
-  --bg-url: url(.assets/bg2.jpg);
+  --bg-url: url(./assets/bg-desktop-light.jpg);
 }
 
+}/*animações*/
+
+@keyframes slide-in{
+
+  from {left: 0;
+  }
+  to {
+    left:50%
+  }
 }
+
+@keyframes slide-back{
+  from {
+    left: 50%;
+    
+  }
+  to{
+    left: 0;
+  }
+}
+  
+
